@@ -78,11 +78,19 @@ export function fillOutInIframe(iframeId, inputId, value) {
           iframe.contentDocument || iframe.contentWindow.document;
         const input = iframeDoc.getElementById(inputId);
         if (input) {
+          // Simulate focus event
+          input.focus();
+
+          // Set the value in the input field
           input.value = value;
+
+          // Trigger the 'input' and 'change' events to simulate real user input
           const inputEvent = new Event("input", { bubbles: true });
           const changeEvent = new Event("change", { bubbles: true });
           input.dispatchEvent(inputEvent);
           input.dispatchEvent(changeEvent);
+
+          // Simulate blur event to trigger validation
           input.blur();
           clearInterval(interval);
           resolve();
