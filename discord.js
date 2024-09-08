@@ -27,7 +27,7 @@ function discordSetup(url) {
    * @param {string} message - The success message to send.
    */
   function sendSuccessMessage(message) {
-    sendDiscordMessage(`:white_check_mark: ${message}`);
+    sendMessage(`:white_check_mark: ${message}`);
   }
 
   /**
@@ -35,7 +35,7 @@ function discordSetup(url) {
    * @param {string} message - The error message to send.
    */
   function sendErrorMessage(message) {
-    sendDiscordMessage(`:x: ${message}`);
+    sendMessage(`:x: ${message}`);
   }
 
   /**
