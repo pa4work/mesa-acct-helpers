@@ -12,7 +12,7 @@ function discordSetup(url) {
    * Sends a message to the configured Discord webhook.
    * @param {string} message - The message content to send to Discord.
    */
-  function sendDiscordMessage(message) {
+  function sendMessage(message) {
     fetch(webhookUrl, {
       method: "POST",
       headers: {
@@ -58,7 +58,7 @@ function discordSetup(url) {
 
   // Return an object with methods for sending messages to Discord and formatting them
   return {
-    sendDiscordMessage,
+    sendMessage,
     sendSuccessMessage,
     sendErrorMessage,
     getCodeMessage,
